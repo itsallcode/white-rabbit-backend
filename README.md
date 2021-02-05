@@ -1,8 +1,5 @@
 # white-rabbit-backend
 
-
-## SHORT_DESCRIPTION
-
 ![Codacy Security Scan](https://github.com/itsallcode/white-rabbit-backend/workflows/Codacy%20Security%20Scan/badge.svg)
 ![SL Scan](https://github.com/itsallcode/white-rabbit-backend/workflows/SL%20Scan/badge.svg)
 [![GitHub issues](https://img.shields.io/github/issues/itsallcode/white-rabbit-backend.svg)](https://github.com/itsallcode/white-rabbit-backendissues)
