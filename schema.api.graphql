@@ -3,16 +3,11 @@ schema:
     query: Query
     mutation: Mutation
 }
-
 type Query {
     getRecordByMonthOfYear(userId: ID!, year: String!, month: String!) MonthlyRecord!
-
 }
-
 type Mutation {
-
 }
-
 type MonthlyRecord {
     
     userId: ID!
@@ -27,7 +22,6 @@ type dayRecord {
     nextToken: String
 
 }
-
 type Day {
     date: AWSDate!
     type: String!
@@ -35,10 +29,8 @@ type Day {
     end: AWSTime
     activities: [Activity]
  }   
-
  type Activity {
     projectId: String!
     comment: String
     duration: String
-
  }   
