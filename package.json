@@ -1,0 +1,26 @@
+{
+  "name": "white-rabbit-backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Backend for white-rabbit time recording",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sls": "sls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsallcode/white-rabbit-backend.git"
+  },
+  "keywords": [],
+  "author": "Sascha Ziesig",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itsallcode/white-rabbit-backend/issues"
+  },
+  "homepage": "https://github.com/itsallcode/white-rabbit-backend#readme",
+  "devDependencies": {
+    "serverless": "2.4.0",
+    "serverless-appsync-plugin": "^1.6.0"
+  }
+}

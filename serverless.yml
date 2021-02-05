@@ -1,0 +1,19 @@
+service: white-rabbit-backend
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+plugins:
+  - serverless-appsync-plugin 
+
+package:
+  exclude:
+    - package.json
+    - package-lock.json
+
+custom:
+  appSync:
+  - ${file(serverless-appsync-api.yml)}
