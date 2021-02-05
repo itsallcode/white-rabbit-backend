@@ -3,19 +3,14 @@ schema:
     query: Query
     mutation: Mutation
 }
-
 type Query {
-    getRecordByMonthOfYear(id: ID!, year: String!, month: String!) MonthlyRecord!
-
+    getRecordByMonthOfYear(userId: ID!, year: String!, month: String!) MonthlyRecord!
 }
-
 type Mutation {
-
 }
-
 type MonthlyRecord {
     
-    id: ID!
+    userId: ID!
     year: String
     month: String
     overtimePreviousMonth: String
@@ -27,18 +22,15 @@ type dayRecord {
     nextToken: String
 
 }
-
 type Day {
     date: AWSDate!
     type: String!
     begin: AWSTime
     end: AWSTime
-    activities: Activities
+    activities: [Activity]
  }   
-
- type Activities {
+ type Activity {
     projectId: String!
     comment: String
     duration: String
-
  }   
