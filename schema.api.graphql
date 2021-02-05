@@ -1,0 +1,44 @@
+schema:
+{
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    getRecordByMonthOfYear(id: ID!, year: String!, month: String!) MonthlyRecord!
+
+}
+
+type Mutation {
+
+}
+
+type MonthlyRecord {
+    
+    id: ID!
+    year: String
+    month: String
+    overtimePreviousMonth: String
+    days: DayRecord!
+}
+
+type dayRecord {
+    days: [Day!]
+    nextToken: String
+
+}
+
+type Day {
+    date: AWSDate!
+    type: String!
+    begin: AWSTime
+    end: AWSTime
+    activities: Activities
+ }   
+
+ type Activities {
+    projectId: String!
+    comment: String
+    duration: String
+
+ }   
