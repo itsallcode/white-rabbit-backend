@@ -20,8 +20,8 @@ This project is maintained by [@p1pp5l3r](https://github.com/p1pp5l3r). Please u
 
 | Type                   | Platforms                                                    |
 | ---------------------- | ------------------------------------------------------------ |
-| 🚨 **Bug Reports**      | [GitHub Issue Tracker](https://github.com/itsallcode/white-rabbit-backend/issues) |
-| 🎁 **Feature Requests** | [GitHub Issue Tracker](https://github.com/itsallcode/white-rabbit-backend/issues) |
+| 🚨 **Bug Reports**      | [GitHub Issue Tracker](https://github.com/itsallcode/white-rabbit-backend/issues/new?assignees=&labels=&template=bug_report.md&title=) |
+| 🎁 **Feature Requests** | [GitHub Issue Tracker](https://github.com/itsallcode/white-rabbit-backend/issues/new?assignees=&labels=&template=feature_request.md&title=) |
 | 🛡 **Report a security vulnerability**      | [GitHub Issue Tracker](https://github.com/itsallcode/white-rabbit-backend/issues) |
 
 ## Development
