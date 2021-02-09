@@ -1,42 +1,49 @@
 package org.itsallcode.whiterabbit.plugin.storagebackend;
 
+import org.itsallcode.whiterabbit.api.Plugin;
 import org.itsallcode.whiterabbit.api.PluginConfiguration;
 import org.itsallcode.whiterabbit.api.features.PluginFeature;
 
-import jdk.tools.jlink.plugin.Plugin;
-
-public class StoragePlugin implements Plugin
+public class BackendStoragePlugin implements Plugin
 {
+
+    private PluginConfiguration config;
+    private BackendMonthDataStorage storage;
+
     @Override
     public void init(PluginConfiguration config)
     {
-        // ignore
+        this.config = config;
     }
 
     @Override
     public String getId()
     {
-        return "demo";
+        return "backend-storage";
     }
 
     @Override
     public void close()
     {
-        // ignore
+        if (storage != null)
+        {
+            storage.close();
+        }
     }
 
     @Override
     public boolean supports(Class<? extends PluginFeature> featureType)
     {
-        return featureType.isAssignableFrom(DemoProjectReportExporter.class);
+        return featureType.isAssignableFrom(BackendMonthDataStorage.class);
     }
 
     @Override
     public <T extends PluginFeature> T getFeature(Class<T> featureType)
     {
-        if (featureType.isAssignableFrom(DemoProjectReportExporter.class))
+        if (featureType.isAssignableFrom(BackendMonthDataStorage.class))
         {
-            return featureType.cast(new DemoProjectReportExporter());
+            storage = new BackendMonthDataStorage(config);
+            return featureType.cast(storage);
         }
         throw new IllegalArgumentException("Feature " + featureType.getName() + " not supported by plugin " + getId());
     }

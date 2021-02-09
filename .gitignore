@@ -5,3 +5,8 @@ jspm_packages
 # Serverless directories
 .serverless
 /storage-plugin/.gradle/
+/storage-plugin/.classpath
+/storage-plugin/.project
+/storage-plugin/.settings/org.eclipse.buildship.core.prefs
+/storage-plugin/bin/
+/storage-plugin/build/
