@@ -6,7 +6,6 @@ import org.itsallcode.whiterabbit.api.features.PluginFeature;
 
 public class BackendStoragePlugin implements Plugin
 {
-
     private PluginConfiguration config;
     private BackendMonthDataStorage storage;
 
