@@ -1,0 +1,57 @@
+plugins {
+    id 'java-library'
+    id 'jacoco'
+    id 'org.sonarqube' version "3.1"
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+group = "org.itsallcode.whiterabbit"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+ext {
+    junitVersion = '5.7.0'
+    log4jVersion = '2.14.0'
+    mockitoVersion = '3.7.0'
+}
+
+dependencies {
+    compileOnly "org.itsallcode.whiterabbit:whiterabbit-plugin-api:1.4.0"
+    compileOnly "org.apache.logging.log4j:log4j-api:$log4jVersion"
+
+    testImplementation "org.assertj:assertj-core:3.18.1"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "org.mockito:mockito-junit-jupiter:$mockitoVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:$junitVersion"
+    testImplementation "org.junit-pioneer:junit-pioneer:1.1.0"
+    testImplementation "nl.jqno.equalsverifier:equalsverifier:3.5.1"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
+    testRuntimeOnly "org.apache.logging.log4j:log4j-core:$log4jVersion"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+
+rootProject.tasks["sonarqube"].dependsOn(tasks["jacocoTestReport"])
+
+shadowJar {
+    archiveBaseName.set(project.name)
+    archiveClassifier.set(null)
+    archiveVersion.set("")
+}
