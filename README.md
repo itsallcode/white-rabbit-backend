@@ -1,3 +1,5 @@
+# This project is not maintained any more.
+
 # white-rabbit-backend
 
 ![Codacy Security Scan](https://github.com/itsallcode/white-rabbit-backend/workflows/Codacy%20Security%20Scan/badge.svg)
